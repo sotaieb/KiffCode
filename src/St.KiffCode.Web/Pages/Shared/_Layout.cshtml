@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" href="~/favicon.ico">
+    <link rel="stylesheet" href="~/dist/main.bundle.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="fiiter">
+        <div class="container">
+            &copy; 2021 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+
+    <script src="~/dist/main.bundle.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
