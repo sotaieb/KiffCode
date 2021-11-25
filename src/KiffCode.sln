@@ -9,11 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "St.KiffCode.Core", "St.Kiff
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "St.KiffCode.Core.Tests", "St.KiffCode.Core.Tests\St.KiffCode.Core.Tests.csproj", "{A5860F86-5A59-40FA-997B-3DA826BFD468}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46D1F4CF-8863-4157-9EA8-3B405A62CEFB}"
-	ProjectSection(SolutionItems) = preProject
-		postcss.config.js = postcss.config.js
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

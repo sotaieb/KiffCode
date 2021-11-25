@@ -1,0 +1,1 @@
+(this["webpackJsonpclient-app"]=this["webpackJsonpclient-app"]||[]).push([[2],{202:function(e,t,c){"use strict";c.r(t);c(72);var s=c(98);t.default=function(){return Object(s.jsxs)(s.Fragment,{children:[Object(s.jsx)("div",{className:"hero"}),Object(s.jsx)("h1",{children:"Hi from React !"})]})}}}]);

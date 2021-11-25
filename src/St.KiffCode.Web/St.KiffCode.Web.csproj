@@ -2,34 +2,42 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
+		
+		<IsPackable>false</IsPackable>
+		<SpaRoot>ClientApp\</SpaRoot>
+		<DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+	
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>ee182a30-71b5-45cb-8786-55774c5e437a</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
-	  <TypeScriptCompile Remove="node_modules\**" />
+		<!-- Don't publish the SPA source files, but do show them in the project files list -->
+		<Content Remove="$(SpaRoot)**" />
+		<None Remove="$(SpaRoot)**" />
+		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
-	  <Content Include="Scripts\assets\logo.svg" />
+	  <Content Remove="wwwroot\favicon.ico" />
+	  <Content Remove="wwwroot\manifest.json" />
+	  <Content Remove="wwwroot\robots.txt" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
-		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+	  <Content Include="ClientApp\src\assets\logo.png" />
+	  <Content Include="ClientApp\src\assets\logo.svg" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
-		<Folder Include="wwwroot\dist\" />
-
+	  <None Include="wwwroot\favicon.ico" />
+	  <None Include="wwwroot\manifest.json" />
+	  <None Include="wwwroot\robots.txt" />
 	</ItemGroup>
-	<!--<Target Name="NpmInstall" Inputs="package.json" Outputs="node_modules/.install-stamp">
-		<Exec Command="npm install" Condition="true" />
-	</Target>-->
+	
 
-	<!--<Target Name="NpmRunBuild" BeforeTargets="BeforeBuild">
-		<Exec Command="npm run build" />
-	</Target>-->
+	
 
 </Project>

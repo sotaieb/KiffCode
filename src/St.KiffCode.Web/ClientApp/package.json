@@ -1,0 +1,57 @@
+{
+  "name": "client-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "bootstrap": "^5.1.3",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "sass": "^1.43.5",
+    "source-map-explorer": "^2.5.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "prestart": "node ./scripts/https.js && node ./scripts/react-https.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "node ./scripts/postBuild.js",
+    "build-home": "npm run configure-app-home npm run build",
+    "configure-app-home": "cross-env REACT_APP_NAME=AppHome PUBLIC_URL=/AppHome GENERATE_SOURCEMAP=false",
+    "watch": "npm run configure-app-home node ./scripts/watch.js",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

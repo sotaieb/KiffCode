@@ -1,6 +1,22 @@
 ﻿@page
+@using System.Text.RegularExpressions
 @model St.KiffCode.Web.Pages.IndexModel
 @{
+    ViewBag.Title = "Home";
+    Layout = "~/Pages/Shared/_Layout_AppHome.cshtml";
+   
 }
 
 <div id="root"></div>
+
+@section Scripts {
+   @* @{       
+        var runtimeFileName = Directory.GetFiles(@"~/home/static/js",@"^runtime*")
+                                       .FirstOrDefault();
+    }*@
+    @*
+    <script asp-src-include="~/home/static/js/2.*.js"
+            asp-src-exclude="~/home/static/js/**/*.js">
+    </script>*@
+
+}
